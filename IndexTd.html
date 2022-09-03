@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width,viewport-fit=cover,user-scalable=no,target-densitydpi=device-dpi">
+<title>TDRSE Index</title>
+</head>
+<body>
+<style>
+/*
+@font-face{
+font-family:font;
+src:url();
+}
+*/
+*::-webkit-scrollbar {display:none}
+*{
+font-family:font;
+outline:none;
+box-sizing:border-box;
+-webkit-text-size-adjust:none;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+-moz-user-select:none;
+-webkit-user-select:none;
+-ms-user-select:none;
+-khtml-user-select:none;
+-o-user-select:none;
+user-select:none;
+}
+a{
+text-decoration:none;
+color:#000;
+}
+body{
+margin:0;
+background:#fff;
+}
+</style>
+<div id="partA" style="background:#f2f3f5">
+<style>
+/*overflow-y:scroll;*/
+body{margin:0;}
+#tdrse{
+padding:20px;
+background:#fff;
+display:none;
+border:0px solid #000;
+/*border-bottom:2px solid #f00;
+box-shadow:0 1px 3px 0 #bbb;*/
+}
+table{
+width:100%;
+padding:10px;
+border-collapse:collapse;
+border:0px solid #000;
+background:#f2f3f5;
+/*border-bottom:0.5px solid #000;
+box-shadow:0 1px 3px 0 #bbb;*/
+}
+td{
+height:110px;
+border:0px solid #000;
+/*border-bottom:1px solid #000;*/
+padding:5px;
+vertical-align:top;
+}
+#tdtoo{
+width:100px;
+height:100px;
+padding:15px;
+background:#fff;
+box-shadow:0 0 0 0 rgba(0,0,0,.7);
+border:5px solid #000;
+border-radius:0px;
+transition:all 0.5s;
+}
+#tdtoo:active{
+padding:0px;
+border:15px solid #000;
+box-shadow:0 0 5px 0 rgba(0,0,0,.7);
+}
+#tdnon{
+font-size:14px;
+height:70px;
+overflow-y:scroll;
+font-weight:bold;
+/*text-overflow:ellipsis;
+overflow-y:hidden;
+text-shadow:0 0 3px rgba(0,0,0,.7);*/
+}
+div b{
+font-size:24px;
+/*text-shadow:0 0 3px rgba(0,0,0,.7);*/
+}
+#tdtd{
+width:100%;
+padding:10px;
+background:#fff;
+border-radius:2px;
+box-shadow:0 1px 3px 0 #bbb;
+}
+#tdutr{
+position:fixed;
+bottom:0;
+width:100%;
+height:calc(100% - 110px);
+overflow-y:scroll;
+border-top:2px solid #fff;
+/*box-shadow:inset 0 1px 3px 0 rgba(0,0,0,.3);*/
+background:#f2f3f5;
+}
+
+#partC,#partB{
+display:none;
+}
+
+@media screen and (min-width:600px) {
+#tdutr{
+position:fixed;
+top:0;
+right:0;
+width:400px;
+height:100%;
+border-top:0px solid #fff;
+overflow-y:scroll;
+}
+table,#tdrse{
+display:block;
+width:calc(100% - 400px);
+/*border-bottom:0px solid #000;*/
+}
+}
+@media screen and (max-height:300px){
+#tdutr{
+height:100%;
+border-top:0px solid #fff;
+}
+}
+@media screen and (max-width:180px){
+*{
+display:none;
+}
+}
+</style>
+<script>
+setInterval(function(){var date = new Date();var week=date.getDay();var are=['周日','周一','周二','周三','周四','周五','周六',''];
+if (date.getMinutes() <= 9){var z = 0;}else{var z = '';}document.getElementById('date').innerHTML = date.getHours() + ':' + z + date.getMinutes() + ' ' + are[week];},0);
+function wrte(a){
+if(a==1){
+document.getElementById('partA').style.display="none";
+document.getElementById('partB').style.display="block";
+}
+if(a==2){
+document.getElementById('partA').style.display="none";
+document.getElementById('partC').style.display="block";
+}
+}
+function ojn(a){
+window.open(a);
+}
+onload=function(){
+//null
+}
+</script>
+<div id="tdrse">
+<svg viewBox="0 0 360 100">
+<g transform="translate(0,100) scale(0.1,-0.1)" fill="#000" stroke="none"><path d="M100 800 l0 -100 100 0 100 0 0 -300 0 -300 100 0 100 0 0 300 0 300 100 0 100 0 0 100 0 100 -300 0 -300 0 0 -100z"/><path d="M800 500 l0 -400 250 0 250 0 0 50 0 50 50 0 50 0 0 300 0 300 -50 0 -50 0 0 50 0 50 -250 0 -250 0 0 -400z m400 0 l0 -200 -100 0 -100 0 0 200 0 200 100 0 100 0 0 -200z"/><path d="M1500 500 l0 -400 100 0 100 0 0 100 0 100 100 0 100 0 0 -100 0 -100 100 0 100 0 0 100 0 100 -50 0 -50 0 0 50 0 50 50 0 50 0 0 200 0 200 -50 0 -50 0 0 50 0 50 -250 0 -250 0 0 -400z m400 100 l0 -100 -100 0 -100 0 0 100 0 100 100 0 100 0 0 -100z"/><path d="M2300 850 l0 -50 -50 0 -50 0 0 -200 0 -200 200 0 200 0 0 -50 0 -50 -200 0 -200 0 0 -100 0 -100 250 0 250 0 0 50 0 50 50 0 50 0 0 200 0 200 -200 0 -200 0 0 50 0 50 200 0 200 0 0 100 0 100 -250 0 -250 0 0 -50z"/><path d="M2900 500 l0 -400 300 0 300 0 0 100 0 100 -200 0 -200 0 0 50 0 50 200 0 200 0 0 100 0 100 -200 0 -200 0 0 50 0 50 200 0 200 0 0 100 0 100 -300 0 -300 0 0 -400z"/></g></svg>
+</div>
+<table>
+<td width="110px">
+<div id="tdtoo">
+<svg viewBox="0 0 80 70">
+<g transform="translate(0,100) scale(0.1,-0.1)" fill="#000" stroke="none"><path d="M100 800 l0 -100 100 0 100 0 0 -300 0 -300 100 0 100 0 0 300 0 300 100 0 100 0 0 100 0 100 -300 0 -300 0 0 -100z"/></g></svg>
+</div>
+</td>
+<td width="100%">
+<div><b>tdrse</b></div>
+<div id="tdnon">
+<a>时间，与永远也捉摸不到的空虚相连...</a>
+<br>
+<a>我只是森中之木罢...</a>
+<br><br>
+关于<br>
+<u><a onclick="ojn('http://uito.synergize.co')">tdrse博客</a></u> · <u><a onclick="ojn('http://to.synergize.co')">tdrse主页</a></u> · <u><a onclick="ojn('http://tdrse.ihostfull.com')">tdrse工作室</a></u>
+<br>
+<u><a onclick="ojn('https://qm.qq.com/cgi-bin/qm/qr?k=y92JHqCct3yTM6UpEmnl-Hn59_LMSoFy&noverify=0')">tdrse的QQ</a></u> · <u><a onclick="location='mailto:tdrse@outlook.com';">tdrse邮箱</a></u>
+</u>
+<br><br>
+<a>tdrse是一个很普通的人，只不过，他很迷茫，不知何方，才有梦想...</a>
+<br><br>
+<a>愿意交个朋友吗，我的朋友？</a>
+<br><br>
+tdrse<br>
+2022/7/8<br>
+</div>
+</td>
+</table>
+<div id="tdutr">
+<div style="padding:10px 10px 5px 10px;">
+<div id="tdtd">
+<b>欢迎访问！</b><br><br>我是站长tdrse，在此我很高兴你能打开这个文件，非常感谢！
+</div>
+</div>
+<div style="padding:5px 10px 5px 10px;">
+<div id="tdtd">
+来点有意思的！<br>
+时间：<a id="date"></a>...<br>
+或者&ensp;<a onclick="wrte(1)">[运行A]</a><br>
+或者&ensp;<a onclick="wrte(2)">[运行B]</a><br>
+Author:tdrse<br><br>
+Version 1.1 <a style="background:#000;color:#fff;border-radius:2px;font-size:5px;vertical-align:top;padding:0 2px 0 2px;">beta</a>
+</div>
+</div>
+<div style="padding:5px 10px 5px 10px;">
+<div id="tdtd">
+以下文段来自史铁生先生的散文《想念地坛》<br>
+<br>
+&emsp;&emsp;想念地坛，主要是想念它的安静。<br>
+&emsp;&emsp;坐在那园子里，坐在不管它的哪一个角落，任何地方，喧嚣都在远处。近旁只有荒藤老树，只有栖居了鸟儿的废殿颓檐、长满了野草的残墙断壁，暮鸦吵闹着归来，雨燕盘桓吟唱，风过檐铃，雨落空林，蜂飞蝶舞草动虫鸣······四季的歌咏此起彼伏从不间断。地坛的安静并非无声。
+</div>
+</div>
+<div style="padding:5px 10px 10px 10px;">
+<div id="tdtd">
+一个静态文件，...作者耗时7+小时。<br>
+...<br>
+SVG的"T"字母图标：<br>
+<div style="padding:10px;"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,100) scale(0.1,-0.1)" fill="#000" stroke="none"><path d="M0 500 l0 -500 500 0 500 0 0 500 0 500 -500 0 -500 0 0 -500z m900 300 l0 -100 -150 0 -150 0 0 -300 0 -300 -100 0 -100 0 0 300 0 300 -150 0 -150 0 0 100 0 100 400 0 400 0 0 -100z"/></g></svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="partB" style="padding:20px;">
+<style>
+#div1
+{
+width:120px;
+padding:5px;
+background-color:yellow;
+border:1px solid black;
+}
+.in{
+background-color:yellow;
+-moz-appearance:none;
+-webkit-appearance:none;
+-ms-appearance:none;
+-khtml-appearance:none;
+-o-appearance:none;
+appearance:none;
+border:1px solid #000;
+}
+.in::slider-thumb {
+appearance:none;
+height:20px;
+width: 20px;
+background-color:yellow;
+border-radius: 50%;
+border: solid 1px #000;
+}
+.in::-o-slider-thumb {
+-o-appearance:none;
+appearance:none;
+height:20px;
+width: 20px;
+background-color:yellow;
+border-radius: 50%;
+border: solid 1px #000;
+}
+.in::-khtml-slider-thumb {
+-khtml-appearance:none;
+appearance:none;
+height:20px;
+width: 20px;
+background-color:yellow;
+border-radius: 50%;
+border: solid 1px #000;
+}
+.in::-ms-slider-thumb {
+-ms-appearance:none;
+appearance:none;
+height:20px;
+width: 20px;
+background-color:yellow;
+border-radius: 50%;
+border: solid 1px #000;
+}
+.in::-moz-slider-thumb {
+-moz-appearance:none;
+appearance:none;
+height:20px;
+width: 20px;
+background-color:yellow;
+border-radius: 50%;
+border: solid 1px #000;
+}
+.in::-webkit-slider-thumb {
+-webkit-appearance:none;
+appearance:none;
+height:20px;
+width: 20px;
+background-color:black;
+border-radius:0px;
+border: solid 1px #000;
+}
+</style>
+<script>
+function rotate(value){document.getElementById('div1').style.webkitTransform="rotate(" + value + "deg)";document.getElementById('div1').style.msTransform="rotate(" + value + "deg)";document.getElementById('div1').style.MozTransform="rotate(" + value + "deg)";document.getElementById('div1').style.OTransform="rotate(" + value + "deg)";document.getElementById('div1').style.transform="rotate(" + value + "deg)";document.getElementById('span1').innerHTML=value + "deg";}
+function backer(){
+document.getElementById('partA').style.display="";
+document.getElementById('partB').style.display="";
+}
+</script>
+
+<a>旋转黄色的 div 元素：</a><br><br>
+<div id="div1">Hell And Heaven.<br>Hello World !<br>You Peace World.</div>
+<br><br><a>旋转：<br><input type="range" class="in" min="-360" max="360" value="0" ontouchmove="rotate(this.value)" onmousemove="rotate(this.value)" onchange="rotate(this.value)" /><br>
+rotate:<span id="span1">0deg</span></a>
+<br><a onclick="backer()">[返回]</a><br><a>由于某种原因，作者没有设置动画...</a>
+</div>
+
+
+<div id="partC" style="background:#fff">
+
+<style>
+*{outline:none;
+box-sizing:border-box;
+user-select:none;}
+body{margin:0;}
+#load{
+position: fixed;
+top:0;
+font-size:14px;
+width:100%;
+padding:5px;
+background:#f4f5f7;
+border-radius:0 0 1px 0;
+border:0px solid #000;
+word-break:break-all;
+overflow-y:scroll;
+z-index:1;
+}
+#file{
+display:none;
+opacity:0;
+/*z-index:1;*/
+}
+#canvas{
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: calc(100% - 50px);
+}
+#audio{
+position:fixed;
+border-radius:0px;
+background:#f4f5f7;
+border:0px solid #000;
+left:0px;
+bottom:0px;
+box-sizing:border-box;
+width:100%;
+height:50px;
+/*border-top:1px solid #000;*/
+z-index:1;
+}
+</style>
+<div id="load" onclick="file.click()">选择音乐..</div>
+<input type="file" id="file" hidden accept="audio/*"/>
+<canvas id="canvas"></canvas>
+<audio id="audio" controls autoplay loop preload="none" controlsList="nodownload"></audio>
+<script type="text/javascript">
+window.onload = function () {
+var file = document.getElementById("file");
+var audio = document.getElementById("audio");
+file.onchange = function () {
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+var WIDTH = canvas.width;
+var HEIGHT = canvas.height;
+var files = this.files;
+audio.src = URL.createObjectURL(files[0]);
+document.getElementById('load').innerText=files[0].name;
+document.getElementById('load').style.background="rgba(244,245,247,.5)";
+document.getElementById('load').style.backdropFilter="blur(20px)";
+audio.load();
+var AudCtx = new AudioContext();
+var src = AudCtx.createMediaElementSource(audio);
+var analyser = AudCtx.createAnalyser();
+src.connect(analyser);
+analyser.connect(AudCtx.destination);
+analyser.fftSize = 128;
+var bufferLength = analyser.frequencyBinCount;
+var barWidth = (WIDTH / bufferLength) - 1;
+var barHeight;
+var dataArray = new Uint8Array(bufferLength);
+function renderFrame() {
+requestAnimationFrame(renderFrame);
+context.fillStyle = "#000";
+context.fillRect(0, 0, WIDTH, HEIGHT);
+analyser.getByteFrequencyData(dataArray);
+var x = 0;
+for (var i = 0; i < bufferLength; i++) {
+var data = dataArray[i];
+var percentV = data / 255;
+var percentH = i / bufferLength;
+barHeight = HEIGHT * percentV;
+var r = 255 * percentV;
+var g = 255 * percentH;
+var b = 50;
+context.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+context.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+x += barWidth + 1;}}
+renderFrame();
+audio.play();};};
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!--
+//@Copyright tdrse
+//tdrse@outlook.com
+//backdrop-filter: blur(10px);
+-->
+<!DOCTYPE html>
+<html onselectstart="return false" oncontextmenu="window.event.returnValue=false" oncontextmenu="return false">
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no,target-densitydpi=device-dpi">
+<title>SYSURL</title>
+</head>
+<body id="body">
+<style>
+@font-face{
+font-family: light;
+src: url('./light.woff');
+}
+*{
+touch-action:none;
+font-family:light;
+outline:none;
+color:#333;
+line-height:18px;
+vertical-align:middle;
+box-sizing:border-box;
+-webkit-text-size-adjust:none;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+-moz-user-select:none;
+-webkit-user-select:none;
+-ms-user-select:none;
+-khtml-user-select:none;
+-o-user-select:none;
+user-select:none;
+transition:all 0.2s;
+}
+a{text-decoration:none;}
+body{
+margin:0;
+width:100%;
+height:100%;
+background: url(w.jpg) no-repeat fixed center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-origin:border-box;
+}
+#search{
+text-align:center;
+background:transparent;
+padding:250px 80px 0px;
+}
+#free,#input{
+font-size:16px;
+width:100%;
+max-width:500px;
+padding:10px;
+border:0px solid #555;
+border-radius:20px;
+box-shadow:0px 1px 3px 0px rgba(100,100,100,.7);
+}
+#input{
+/*backdrop-filter:blur(10px);*/
+background:/*transparent*/rgba(255,255,255,.7);
+overflow:hidden;
+/*backdrop-filter: blur(2px);
+backdrop-filter: brightness(30%);
+backdrop-filter: contrast(40%);
+backdrop-filter: drop-shadow(4px 4px 10px blue);
+backdrop-filter: grayscale(30%);
+backdrop-filter: hue-rotate(120deg);
+backdrop-filter: invert(70%);
+backdrop-filter: opacity(20%);
+backdrop-filter: sepia(90%);
+backdrop-filter: saturate(80%);
+*/
+}
+#deto,#bato,#system a,#outrch a{
+font-size:16px;
+width:100%;
+cursor: pointer;
+max-width:500px;
+padding:10px 20px 10px;
+border:0px solid #555;
+background:#fff;
+border-radius:2px;
+box-shadow:0px 1px 3px 0px rgba(100,100,100,.7);
+}
+#hiei,#date,#from,#system,#outrch{
+display:none;
+text-align:center;
+padding:10px;
+opacity:0;
+}
+#aufree{
+display:none;
+text-align:center;
+padding:20px 20px 10px;
+}
+#from{
+position:fixed;
+right:20px;
+bottom:20px;
+padding:0;
+}
+#date{
+position:fixed;
+left:20px;
+bottom:20px;
+padding:0;
+}
+#hiei{
+position:fixed;
+left:20px;
+bottom:40px;
+padding:0;
+}
+#about{
+display:none;
+text-align:center;
+opacity:0;
+padding:1px 20px 10px;
+}
+#about #abin{
+font-size:16px;
+width:100%;
+max-width:500px;
+padding:10px;
+border:0px solid #555;
+border-radius:2px;
+background:white;
+box-shadow:0px 1px 3px 0px rgba(100,100,100,.7);
+}
+@media only screen and (min-width:600px){}
+@media screen and (orientation:landscape) and (max-height:600px) {
+#search{
+text-align:center;
+padding:80px 160px 0px;
+}
+}
+</style>
+<script>
+function into(){
+document.getElementById("bato").innerText="返回";
+document.getElementById("bout").innerText="关于";
+document.getElementById("chto").innerText="引擎";
+document.getElementById("nowt").innerText="搜索";
+document.getElementById('from').style.display="block";
+document.getElementById('date').style.display="block";
+document.getElementById('hiei').style.display="block";
+if(document.getElementById('about').style.display=='block'){
+document.getElementById('outrch').style.opacity="";}
+document.getElementById('about').style.display="";
+
+document.getElementById("free").style.backgroundColor="";
+document.getElementById("search").style.display="";
+document.getElementById("aufree").style.display="";
+document.getElementById("system").style.display="";
+document.getElementById("system").style.opacity="";
+
+document.getElementById("input").style.backgroundColor="rgba(255,255,255,1)";
+setInterval(function(){
+var date=new Date();
+if(date.getMinutes()<=9){var z=0;}else{var z='';}
+document.getElementById('date').innerHTML=date.getHours() + ':' + z + date.getMinutes();
+var t=date.getHours();
+if(t >= 3 && t < 5){
+document.getElementById('hiei').innerText="还很早呢......睡会儿。";
+}else if(t >= 5 && t < 8){
+document.getElementById('hiei').innerText="早安...请问叫醒您的是梦想还是闹钟呢？";
+}else if(t >= 11 && t < 13){
+document.getElementById('hiei').innerText="午安...您可以轻快地睡一觉。";
+}else if(t >= 13 && t < 18){
+document.getElementById('hiei').innerText="下午好，如果需要，请来这里寻找宁静。";
+}else if(t >= 18 && t < 19){
+document.getElementById('hiei').innerText="傍晚好...今天过得怎么样呢？";
+}else if(t >= 19 && t < 23){
+document.getElementById('hiei').innerText="晚上好...";
+}else if((t >= 23 && t < 24) || t < 3){
+document.getElementById('hiei').innerText="深夜了，请早点休息。";
+}else{
+document.getElementById('hiei').innerText="";
+}
+},0);
+document.getElementById('from').innerText="By @tdrse";
+document.getElementById('search').style.padding="20px 20px 10px";
+document.getElementById('outrch').style.display="block";
+document.getElementById('input').style.borderRadius="2px";
+setTimeout(function(){document.getElementById('outrch').style.opacity="1";document.getElementById('from').style.opacity="1";document.getElementById('date').style.opacity="1";document.getElementById('hiei').style.opacity="1";document.getElementById("input").removeAttribute("readOnly");document.getElementById('about').style.opacity="";},150)
+}
+function bato(){
+document.getElementById("input").style.backgroundColor="";
+document.getElementById('search').style.padding="";
+document.getElementById('input').style.borderRadius="";
+setTimeout(function(){document.getElementById('outrch').style.display="";document.getElementById('from').style.display="";document.getElementById('date').style.display="";document.getElementById('hiei').style.display="";},60);
+document.getElementById('outrch').style.opacity="";
+document.getElementById('from').style.opacity="";
+document.getElementById('date').style.opacity="";
+document.getElementById('hiei').style.opacity="";
+document.getElementById("input").setAttribute("readOnly",'true');
+document.getElementById("input").value="";
+}
+function getkie(objname){
+var arrstr = document.cookie.split(";");
+for(var i = 0;i < arrstr.length;i ++){
+var temp = arrstr[i].split("=");
+if(temp[0] == objname) return unescape(temp[1]);
+}
+}
+function in_array(search,array){
+for(var i in array){
+if(array[i]==search){
+return true;
+}
+}
+return false;
+}
+function sech(){
+document.onkeydown=function(ev){
+var event= ev || event;
+if(event.keyCode==13){
+var num=document.cookie.split(';');
+var inue=document.getElementById("input").value;
+if(navigator.cookieEnabled){
+if(getkie('sysurl')=="baidu"){
+var sys="https://www.baidu.com/s?word=";
+}else if(getkie('sysurl')=="bing"){
+var sys="http://cn.bing.com/?q=";
+}else if(getkie('sysurl')=="sogou"){
+var sys="https://www.sogou.com/web?query=";
+}else if(getkie('sysurl') && (getkie('sysurl').slice(0,7)=='http://' || getkie('sysurl').slice(0,8)=='https://')){
+if(getkie('sysurl').charAt(getkie('sysurl').length - 1)=='='){
+var sys=getkie('sysurl');
+}else{
+var sys=getkie('sysurl') + '=';
+}
+}else{
+if((inue.slice(0,7)=='http://' || inue.slice(0,8)=='https://') && inue!=='http://' && inue!=='https://'){
+var sys="";
+}else if((inue.slice(0,7)!=='http://' || inue.slice(0,8)!=='https://') && in_array('.',inue) && inue.slice(0,1)!=='.'){
+if((in_array('/',inue) && inue.indexOf('/') - inue.charAt(inue.indexOf('/')).lastIndexOf('.') >= 4) || (!in_array('/',inue) && inue.length - inue.lastIndexOf('.') >= 3)){
+var sys="http://";
+}
+else{
+var sys="http://cn.bing.com/?q=";
+}
+}else if(inue.slice(0,7)!=='http://' || inue.slice(0,8)!=='https://'){
+var sys="http://cn.bing.com/?q=";
+}
+}
+}else{
+if((inue.slice(0,7)=='http://' || inue.slice(0,8)=='https://') && inue!=='http://' && inue!=='https://'){
+var sys="";
+}else if((inue.slice(0,7)!=='http://' || inue.slice(0,8)!=='https://') && in_array('.',inue) && inue.slice(0,1)!=='.'){
+if((in_array('/',inue) && inue.indexOf('/') - inue.charAt(inue.indexOf('/')).lastIndexOf('.') >= 4) || (!in_array('/',inue) && inue.length - inue.lastIndexOf('.') >= 3)){
+var sys="http://";
+}
+else{
+var sys="http://cn.bing.com/?q=";
+}
+}else if(inue.slice(0,7)!=='http://' || inue.slice(0,8)!=='https://'){
+var sys="http://cn.bing.com/?q=";
+}
+}
+if(document.getElementById("input").value){
+open(sys + inue);
+}
+}
+}
+}
+function nowt(){
+var num=document.cookie.split(';');
+var inue=document.getElementById("input").value;
+if(navigator.cookieEnabled){
+if(getkie('sysurl')=="baidu"){
+var sys="https://www.baidu.com/s?word=";
+}else if(getkie('sysurl')=="bing"){
+var sys="http://cn.bing.com/?q=";
+}else if(getkie('sysurl')=="sogou"){
+var sys="https://www.sogou.com/web?query=";
+}else if(getkie('sysurl') && (getkie('sysurl').slice(0,7)=='http://' || getkie('sysurl').slice(0,8)=='https://')){
+if(getkie('sysurl').charAt(getkie('sysurl').length - 1)=='='){
+var sys=getkie('sysurl');
+}else{
+var sys=getkie('sysurl') + '=';
+}
+}else{
+if((inue.slice(0,7)=='http://' || inue.slice(0,8)=='https://') && inue!=='http://' && inue!=='https://'){
+var sys="";
+}else if((inue.slice(0,7)!=='http://' || inue.slice(0,8)!=='https://') && in_array('.',inue) && inue.slice(0,1)!=='.'){
+if((in_array('/',inue) && inue.indexOf('/') - inue.charAt(inue.indexOf('/')).lastIndexOf('.') >= 4) || (!in_array('/',inue) && inue.length - inue.lastIndexOf('.') >= 3)){
+var sys="http://";
+}
+else{
+var sys="http://cn.bing.com/?q=";
+}
+}else if(inue.slice(0,7)!=='http://' || inue.slice(0,8)!=='https://'){
+var sys="http://cn.bing.com/?q=";
+}
+}
+}else{
+if((inue.slice(0,7)=='http://' || inue.slice(0,8)=='https://') && inue!=='http://' && inue!=='https://'){
+var sys="";
+}else if((inue.slice(0,7)!=='http://' || inue.slice(0,8)!=='https://') && in_array('.',inue) && inue.slice(0,1)!=='.'){
+if((in_array('/',inue) && inue.indexOf('/') - inue.charAt(inue.indexOf('/')).lastIndexOf('.') >= 4) || (!in_array('/',inue) && inue.length - inue.lastIndexOf('.') >= 3)){
+var sys="http://";
+}
+else{
+var sys="http://cn.bing.com/?q=";
+}
+}else if(inue.slice(0,7)!=='http://' || inue.slice(0,8)!=='https://'){
+var sys="http://cn.bing.com/?q=";
+}
+}
+if(document.getElementById("input").value){
+open(sys + inue);
+}
+}
+function chto(){
+document.getElementById("free").style.backgroundColor="rgba(255,255,255,1)";
+document.getElementById("baidu").innerText="百度";
+document.getElementById("bing").innerText="必应";
+document.getElementById("sogou").innerText="搜狗";
+document.getElementById("deto").innerText="默认";
+document.getElementById('free').style.borderRadius="2px";
+document.getElementById("search").style.display="none";
+document.getElementById("outrch").style.display="";
+document.getElementById('from').style.display="block";
+document.getElementById('date').style.display="block";
+document.getElementById('hiei').style.display="block";
+document.getElementById('from').innerText="By @tdrse";
+document.getElementById("aufree").style.display="block";
+if(navigator.cookieEnabled){
+document.getElementById("system").style.display="block";
+}
+document.getElementById("outrch").style.opacity="";
+setTimeout(function(){document.getElementById("system").style.opacity="1";document.getElementById('from').style.opacity="1";},150);
+if(navigator.cookieEnabled && getkie('sysurl')){
+if(getkie('sysurl').slice(0,7)=='http://' || getkie('sysurl').slice(0,8)=='https://'){
+if(getkie('sysurl').charAt(getkie('sysurl').length - 1)=='='){
+document.getElementById('free').setAttribute('placeholder', getkie('sysurl'));
+}else{
+document.getElementById('free').setAttribute('placeholder', getkie('sysurl') + '=');
+}
+}else{
+document.getElementById('free').setAttribute('placeholder', getkie('sysurl'));
+}
+}else{
+if(!navigator.cookieEnabled){
+document.getElementById('free').setAttribute('placeholder', 'default (No cookie)');}else{
+document.getElementById('free').setAttribute('placeholder', 'default');
+}
+}
+}
+function seto(systodo){
+if(navigator.cookieEnabled && systodo.slice(0,3)=="tdr"){
+document.onkeydown=function(ev){
+var event= ev || event;
+if(event.keyCode==13){
+if(systodo.slice(10).slice(0,7)=="http://" || systodo.slice(10).slice(0,8)=="https://"){
+document.cookie=systodo.slice(3);
+into();
+}else if(in_array('.',systodo)){
+document.cookie='sysurl=http://' + systodo.slice(10);
+into();
+}else{}
+document.getElementById('free').value='';
+}
+}
+}else if(navigator.cookieEnabled && systodo!==['tdrsysurl=','sysurl='] && systodo.slice(0,3)!=="tdr"){
+document.cookie=systodo;
+into();
+document.getElementById('free').value='';
+}
+if(navigator.cookieEnabled && getkie('sysurl')){
+if(getkie('sysurl').slice(0,7)=='http://' || getkie('sysurl').slice(0,8)=='https://'){
+if(getkie('sysurl').charAt(getkie('sysurl').length - 1)=='='){
+document.getElementById('free').setAttribute('placeholder', getkie('sysurl'));
+}else{
+document.getElementById('free').setAttribute('placeholder', getkie('sysurl') + '=');
+}
+}else{
+document.getElementById('free').setAttribute('placeholder', getkie('sysurl'));
+}
+}else{
+if(!navigator.cookieEnabled){
+document.getElementById('free').setAttribute('placeholder', 'default (No cookie)');}else{
+document.getElementById('free').setAttribute('placeholder', 'default');
+}
+}
+}
+function delkie(name){
+var dat=new Date();
+dat.setTime(dat.getTime() - 1);
+var onto=getkie(name);
+if(onto!=null)
+document.cookie=name + "=" + onto + ";expires=" + dat.toGMTString() + ";path=./";
+into();
+document.getElementById('free').setAttribute('placeholder', 'default');
+document.getElementById('free').value='';
+}
+function bout(){
+document.getElementById('ta').innerText="关于SYSURL";
+document.getElementById('tb').innerText="制作者：tdrse";
+document.getElementById('tc').innerText="Version 0.21";
+document.getElementById('outrch').style.display="";
+document.getElementById('about').style.display="block";
+setTimeout(function(){document.getElementById('about').style.opacity="1";},150);
+}
+</script>
+<div ontouchmove="event.preventDefault();" id="sysmian">
+<div id="search">
+<input type="text" readonly onclick="into()" onkeydown="sech()" id="input">
+</div>
+<div id="outrch">
+<a onclick="bato()" id="bato"></a>
+<a onclick="bout()" id="bout"></a>
+<a onclick="chto()" id="chto"></a>
+<a onclick="nowt()" id="nowt"></a>
+</div>
+<div id="aufree">
+<input type="text" placeholder="自定义" id="free" onkeydown="seto('tdrsysurl=' + document.getElementById('free').value)">
+</div>
+<div id="system">
+<a type="button" onclick="seto('sysurl=baidu')" id="baidu"></a>
+<a type="button" onclick="seto('sysurl=bing')" id="bing"></a>
+<a type="button" onclick="seto('sysurl=sogou')" id="sogou"></a>
+<a type="button" onclick="delkie('sysurl')" id="deto"></a>
+</div>
+<div id="about">
+<center>
+<div id="abin">
+<a id="ta" style="color:#ae5454"></a>
+<a id="tb" style="color:#576fcd"></a>
+<a id="tc"></a>
+</div>
+</center>
+</div>
+<div id="hiei"></div>
+<div id="from"></div>
+<div id="date"></div>
+</div>
+</body>
+</html>
